@@ -3,8 +3,9 @@ STEPS:
 1) Cloning repository: In your local environment, clone the GitHub repository containing your Terraform configuration (git clone repository_URL)
 
 2) Credentials: Before running Terraform, make sure you have set up the Google Cloud Platform credentials in your local environment. You can do this by setting the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the JSON file containing your GCP service account credentials.
-Linux/macOS: (export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/credentials-file.json")
-Windows: (set GOOGLE_APPLICATION_CREDENTIALS="C:\path\to\your\credentials-file.json")
+
+    Linux/macOS: (export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/credentials-file.json")
+    Windows: (set GOOGLE_APPLICATION_CREDENTIALS="C:\path\to\your\credentials-file.json")
 
 3) Initializing Terraform: In the directory where you cloned the repository, run terraform (terraform init).
 
