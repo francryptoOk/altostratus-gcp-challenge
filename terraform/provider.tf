@@ -20,7 +20,7 @@ resource "google_compute_network" "altostratus_network" {
 }
 
 # Subnetworks #
-resource "google_compute_subnetwork" "us-central-subnet" {
+resource "google_compute_subnetwork" "europe-southwest1-subnet" {
   name			= "europe-southwest1-subnet"
   network		= google_compute_network.altostratus_network.self_link
   ip_cidr_range	= "10.0.0.0/24"
