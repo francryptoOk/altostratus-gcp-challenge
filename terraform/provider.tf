@@ -14,17 +14,17 @@ provider "google" {
 }
 
 # Network Resources #
-resource "google_compute_network" "altostratus_network" {
+resource "google_compute_network" "altostratus-vpc" {
 	name					= "altostratus-vpc"
 	auto_create_subnetworks	= false # I'll create manually each subnet to manage easier my virtual private cloud (VPC) #
 }
 
 # Subnetworks #
-resource "google_compute_subnetwork" "europe-southwest1-subnet" {
-  name			= "europe-southwest1-subnet"
-  network		= google_compute_network.altostratus_network.self_link
-  ip_cidr_range	= "10.0.0.0/24"
-  region		= var.region
+resource "google_compute_subnetwork" "europe-southwest1-subnet" { 	# For Madrid best options are in "europe-southwest1" #
+	name			= "europe-southwest1-subnet"					# Region, at the Zones "a" or "b" or "c" #
+	network		= google_compute_network.altostratus-vpc.self_link
+	ip_cidr_range	= "10.0.0.0/24"
+	region		= var.region
 }
 
 # Firewall #
