@@ -30,7 +30,7 @@ resource "google_compute_subnetwork" "europe-southwest1-subnet" { 	# For Madrid 
 # Firewall #
 resource "google_compute_firewall" "altostratus-allow-http-ssh-rdp-icmp" {
 	name	= "altostratus-allow-http-ssh-rdp-icmp"
-	network	= google_compute_network.altostratus.self_link
+	network	= google_compute_network.altostratus-vpc.self_link
 	allow {
 		protocol	= "tcp"
 		ports		= ["22", "80", "443", "3389"]
@@ -45,11 +45,11 @@ module "wordpress" {
 	source				= "github.com/francryptook/altostratus-gcp-challenge"
 	project_id			= var.project_id
 	region				= var.region
-	network				= google_compute_network.altostratus.name
-	subnetwork			= google_compute_network.altostratus.self_link
+	network				= google_compute_network.altostratus-vpc.name
+	subnetwork			= google_compute_network.altostratus-vpc.self_link
 	machine_type		= var.machine_type
 	instance_name		= var.instance_name
 	instance_zone		= var.instance_zone
-	instance_subnetwork	= google_compute_network.altostratus.self_link
+	instance_subnetwork	= google_compute_network.altostratus-vpc.self_link
 	wordpress_image		= var.wordpress_image
 }
