@@ -36,7 +36,7 @@ resource "google_compute_firewall" "altostratus-allow-http-ssh-rdp-icmp" {
 		ports		= ["22", "80", "443", "3389"] # SSH 22, HTTP 80, HTTPS 443, 3389 RDP #
 	}
 	allow {
-		protocol = "icmp" # Internet COntrol Message Protocol #
+		protocol = "icmp" # Internet Control Message Protocol #
 	}
 }
 
