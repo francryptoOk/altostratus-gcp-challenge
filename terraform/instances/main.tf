@@ -20,9 +20,6 @@ variable "instance_name" {
 variable "instance_zone" {
 	description = "Zone where instance it's going to be located"
 }
-variable "instance_subnetwork" {
-	description = "Subnetwork for the instance"
-}
 variable "wordpress_image" {
 	description = "Docker image for the WordPress instance"
 	default = "wordpress:latest"
