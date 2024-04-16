@@ -33,10 +33,10 @@ resource "google_compute_firewall" "altostratus-allow-http-ssh-rdp-icmp" {
 	network	= google_compute_network.altostratus-vpc.self_link
 	allow {
 		protocol	= "tcp"
-		ports		= ["22", "80", "443", "3389"]
+		ports		= ["22", "80", "443", "3389"] # SSH 22, HTTP 80, HTTPS 443, 3389 RDP #
 	}
 	allow {
-		protocol = "icmp"
+		protocol = "icmp" # Internet COntrol Message Protocol #
 	}
 }
 
